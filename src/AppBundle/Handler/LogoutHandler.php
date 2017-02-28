@@ -22,6 +22,7 @@ class LogoutHandler implements LogoutSuccessHandlerInterface{
 
     public function onLogoutSuccess(Request $request) {
         
+        // get the user in session and disconnect him
         return new RedirectResponse("/disconnect/".$request->getSession()->get("usr"));
     }
 
